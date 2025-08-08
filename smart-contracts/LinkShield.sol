@@ -16,6 +16,13 @@ contract LinkShield {
     mapping(string => Link) private links;
     // mapping de permissoes
     mapping(string => mapping(address => bool)) public hasAccess; 
+    // endereco para sacar o dinheiro ganho
+    address public immutable admin;
+
+    // dispara codigo no deploy
+    constructor() {
+        admin = msg.sender;
+    }
 
     function addLink(string calldata url, string calldata linkId, uint256 fee) public {
         Link memory link = links[linkId]; 
@@ -55,8 +62,13 @@ contract LinkShield {
             link.url = "";
 
         return link;
-        
-        
+    }
+
+    function withdraw() public {
+        // permissao somente para o admin, sacar o dinheiro
+        require(msg.sender == admin, 'Only admin can withdraw');
+        uint256 amount = address(this).balance;
+        payable(admin).transfer(amount);
     }
 
 }
