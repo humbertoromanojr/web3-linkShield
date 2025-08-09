@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import hash from "object-hash";
-import web3 from "web3";
+import { connectContract } from "@/services/Web3Service";
 
 export default function Home() {
   const [url, setUrl] = useState("");
@@ -33,7 +33,8 @@ export default function Home() {
 
   function handleSubmit() {
     const linkId = hash(url).slice(0, 5);
-    setMessage(`${url} ${fee}`);
+    setMessage(`${url} ${fee} ${linkId}`);
+    connectContract();
   }
 
   return (
