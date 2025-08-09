@@ -1,3 +1,5 @@
+"use client";
+
 export default function Home() {
   const backgroundImageStyle = {
     backgroundImage: "url(/link-shield.png)",
@@ -21,6 +23,7 @@ export default function Home() {
       >
         <div className="col-4">&nbsp;</div>
         <div className="col-8 mt-5">
+          <h1>LinkShield</h1>
           <p>Proteja seus links. Lucre com eles</p>
           <hr />
           <p>
@@ -49,6 +52,9 @@ export default function Home() {
               Conectar e criar link
             </button>
           </div>
+        </div>
+        <div className="alert alert-success p-3 col-8 mt-3 opacity-50">
+          Messages
         </div>
         <div className="col-4">&nbsp;</div>
       </div>
