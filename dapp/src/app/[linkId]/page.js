@@ -24,7 +24,15 @@ export default function Home() {
   }, []);
 
   function handleAccessClick() {
-    console.log("handleAccessClick");
+    setMessage("Paying and accessing link, please wait...");
+
+    getLink(params.linkId, link.fee)
+      .then(() => {
+        setMessage("Payment made, redirecting...");
+        return getLink(params.linkId);
+      })
+      .then((link) => (window.location.href = link.url))
+      .catch((err) => setMessage(err.message));
   }
 
   const backgroundImageStyle = {
