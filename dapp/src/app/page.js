@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import hash from "object-hash";
+import web3 from "web3";
 
 export default function Home() {
   const [url, setUrl] = useState("");
@@ -30,10 +32,8 @@ export default function Home() {
   }
 
   function handleSubmit() {
-    setMessage(`
-      Link: ${url}
-      Taxa: ${fee}
-    `);
+    const linkId = hash(url).slice(0, 5);
+    setMessage(`${url} ${fee}`);
   }
 
   return (
