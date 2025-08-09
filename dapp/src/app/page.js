@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import hash from "object-hash";
-import { connectContract } from "@/services/Web3Service";
+import { addLink } from "@/services/Web3Service";
 
 export default function Home() {
   const [url, setUrl] = useState("");
@@ -33,8 +33,21 @@ export default function Home() {
 
   function handleSubmit() {
     const linkId = hash(url).slice(0, 5);
-    setMessage(`${url} ${fee} ${linkId}`);
-    connectContract();
+    setMessage(`Sending your link to the blockchain, please wait...`);
+    addLink({ url, linkId, feeInWei: fee })
+      .then(() => {
+        setUrl("");
+        setFee("0");
+
+        setMessage(
+          `Your link has been successfully created.: http://localhost:3000/${linkId}`
+        );
+      })
+      .catch((error) => {
+        setMessage(
+          `An error occurred while creating the link: ${error.message}`
+        );
+      });
   }
 
   return (
