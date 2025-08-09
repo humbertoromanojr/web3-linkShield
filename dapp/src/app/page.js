@@ -1,6 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 export default function Home() {
+  const [url, setUrl] = useState("");
+  const [fee, setFee] = useState("0");
+  const [message, setMessage] = useState("");
+
   const backgroundImageStyle = {
     backgroundImage: "url(/link-shield.png)",
     backgroundSize: "cover",
@@ -14,6 +20,21 @@ export default function Home() {
     alignItems: "center",
     justifyContent: "space-between",
   };
+
+  function handleUrlChange(event) {
+    setUrl(event.target.value);
+  }
+
+  function handleFeeChange(event) {
+    setFee(event.target.value);
+  }
+
+  function handleSubmit() {
+    setMessage(`
+      Link: ${url}
+      Taxa: ${fee}
+    `);
+  }
 
   return (
     <>
@@ -31,17 +52,30 @@ export default function Home() {
             Carteira para proteger seu link com a tecnologia Blockchain
           </p>
           <div className="form-floating mb-3">
-            <input type="text" id="url" className="form-control opacity-50" />
+            <input
+              type="text"
+              id="url"
+              className="form-control opacity-50"
+              value={url || ""}
+              onChange={handleUrlChange}
+            />
             <label htmlFor="url">Link: </label>
           </div>
           <div className="form-floating mb-3">
-            <input type="number" id="fee" className="form-control opacity-50" />
+            <input
+              type="number"
+              id="fee"
+              className="form-control opacity-50"
+              value={fee || "0"}
+              onChange={handleFeeChange}
+            />
             <label htmlFor="fee">Taxa por clique (wei): </label>
           </div>
           <div className="form-floating mb-3">
             <button
               type="button"
               className="btn btn-primary w-10 h-10 align-self-center justify-self-center"
+              onClick={handleSubmit}
             >
               <img
                 src="/logo-metamask.png"
@@ -53,9 +87,13 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="alert alert-success p-3 col-8 mt-3 opacity-50">
-          Messages
-        </div>
+        {message ? (
+          <div className="alert alert-success p-3 col-8 mt-3 opacity-50">
+            {message}
+          </div>
+        ) : (
+          <>&nbsp;</>
+        )}
         <div className="col-4">&nbsp;</div>
       </div>
     </>
