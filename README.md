@@ -25,15 +25,11 @@ LINK SHIELD - FullStack Web 3.0
 
 - [Next](https://nextjs.org/docs/app/getting-started/installation)
 
-- [Tailwindcss](https://tailwindcss.com)
+- [Bootstrap](https://getbootstrap.com)
 
-- [Shadcn](https://ui.shadcn.com/docs/installation)
+- [Object hash](https://github.com/puleos/object-hash)
 
-- [Lucide](https://lucide.dev/guide/packages/lucide-react)
-
-- [Foundry](https://getfoundry.sh)
-
-- [Viem](https://viem.sh)
+- [Web3](https://github.com/web3/web3.js)
 
 ## Demonstrations
 
@@ -57,20 +53,6 @@ Install node_modules <br />
 Run application <br />
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npm run dev` and `http://localhost:3000`
 <br /><br />
-
-##
-
-## Install Backend
-
-<br />
-
-<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> Go to folder `web3-linkShield/backend` folder <br />
-
-Install node_modules <br />
-<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npm i`
-
-Run application <br />
-<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npm run dev` and `http://localhost:3003`
 
 ##
 
