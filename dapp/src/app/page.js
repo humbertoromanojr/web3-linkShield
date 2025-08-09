@@ -59,11 +59,13 @@ export default function Home() {
         <div className="col-4">&nbsp;</div>
         <div className="col-8 mt-5">
           <h1>LinkShield</h1>
-          <p>Proteja seus links. Lucre com eles</p>
+          <h3>Protect your links. Profit from them.</h3>
           <hr />
           <p>
-            Cole a sua URL abaixo, defina a taxa por cliques e conect sua
-            Carteira para proteger seu link com a tecnologia Blockchain
+            <strong>
+              Paste your URL below, set the rate per click, and connect your
+              Wallet to protect your link with Blockchain technology.
+            </strong>
           </p>
           <div className="form-floating mb-3">
             <input
@@ -83,7 +85,7 @@ export default function Home() {
               value={fee || "0"}
               onChange={handleFeeChange}
             />
-            <label htmlFor="fee">Taxa por clique (wei): </label>
+            <label htmlFor="fee">Pay-per-click (wei): </label>
           </div>
           <div className="form-floating mb-3">
             <button
@@ -97,12 +99,15 @@ export default function Home() {
                 width={32}
                 className="me-2"
               />
-              Conectar e criar link
+              Connect and create link
             </button>
           </div>
         </div>
         {message ? (
-          <div className="alert alert-success p-3 col-8 mt-3 opacity-50">
+          <div
+            className="alert alert-success p-3 col-8 mt-3 opacity-50"
+            role="alert"
+          >
             {message}
           </div>
         ) : (
