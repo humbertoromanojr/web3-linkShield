@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["ethereum"]
+  "cSpell.words": ["ethereum"],
+  "wake.compiler.solc.remappings": []
 }
