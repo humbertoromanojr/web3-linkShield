@@ -61,7 +61,7 @@ Run application <br />
 <br />
 <br />
 
-<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> Go to folder `web3-linkShield/smarts-contracts` <br /><br />
+<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> Go to folder `web3-linkShield/smart-contract` <br /><br />
 
 ## Sources <br />
 
